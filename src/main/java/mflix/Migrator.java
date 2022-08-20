@@ -18,7 +18,8 @@ import java.util.List;
 public class Migrator {
 
   /**
-   * Creates and UpdateOneModel object for each Document that contains an "imdb.rating" field of
+   * Creates and UpdateOneModel object for each Document that contains an
+   * "imdb.rating" field of
    * non-numerical type into a parsable
    *
    * @param doc - Document object to be updated
@@ -36,21 +37,24 @@ public class Migrator {
       if (!"".equals(imdbRating)) {
         rating = Integer.valueOf(imdbRating);
       }
-      // TODO> Ticket: Migration - define the UpdateOneModel object for
-      // the rating type cleanup.
-      return new UpdateOneModel<Document>(new Document(), new
-      Document());
+
+      return new UpdateOneModel<Document>(new Document(), new Document());
     } catch (NumberFormatException e) {
       System.out.println(
           MessageFormat.format(
               "Could not parse {0} into " + "number: {1}", doc.get("imdb.rating", e.getMessage())));
+
+      System.out.println("I'm learning git");
+
     }
     return null;
   }
 
   /**
-   * Creates an UpdateOneModel for each Document object field `lastupdated` of type string into an
-   * update $set to Date type. db.movies.update({_id: doc._id}, {$set: {lastupdated:
+   * Creates an UpdateOneModel for each Document object field `lastupdated` of
+   * type string into an
+   * update $set to Date type. db.movies.update({_id: doc._id}, {$set:
+   * {lastupdated:
    * ISODate(doc.lastupdated)}})
    *
    * @param doc - Document object to get the date transformation applied to
