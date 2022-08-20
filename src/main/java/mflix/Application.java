@@ -11,7 +11,6 @@ public class Application {
 
     String welcomeMessage =
         ""
-            + "\n"
             + " __          __  _                            _          __  __ ______ _ _      \n"
             + " \\ \\        / / | |                          | |        |  \\/  |  ____| (_)     \n"
             + "  \\ \\  /\\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | \\  / | |__  | |___  __\n"
@@ -28,6 +27,8 @@ public class Application {
             + "    \\|/\n"
             + "     |\n"
             + "                       \n";
+            System.out.println("Testing the commit");
+
     System.out.println(welcomeMessage);
   }
 }
